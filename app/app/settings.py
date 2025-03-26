@@ -38,6 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'drf_spectacular',
+    'user',
+    'group',
+    'subgroup',
+    'venue',
+    'event',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +135,13 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'core.User'
+VENUE_MODEL = 'core.Venue'
+GROUP_MODEL = 'core.Group'
+SUBGROUP_MODEL = 'core.SubGroup'
+EVENT_MODEL = 'core.Event'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
